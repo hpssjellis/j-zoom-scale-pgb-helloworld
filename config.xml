@@ -4,12 +4,12 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.yourwebsite.zoom"
-        version   = "0.1.2">
+        version   = "0.1.1">
 
     <name>j-zoom-pgb-helloworld</name>
 
 
-  <preference name="permissions"                value="none"/>  
+<!--  <preference name="permissions"                value="none"/>  -->
 
     <!-- Customize your app and platform with the preference element. -->
     <preference name="phonegap-version"           value="3.1.0" />          <!-- all: current version of PhoneGap -->
