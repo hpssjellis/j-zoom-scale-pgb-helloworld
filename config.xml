@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.yourwebsite.zoom"
-        version   = "0.1.1">
+        version   = "0.1.2">
 
     <name>j-zoom-pgb-helloworld</name>
 
@@ -16,7 +16,7 @@
 
     <preference name="android-minSdkVersion"      value="10" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
-
+    < preference name = "EnableViewportScale"     value="true" / >
 
     
   
