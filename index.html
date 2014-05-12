@@ -30,6 +30,8 @@ document.getElementById('myDiv1').style.WebkitTransformOrigin = '0px 0px';
 
 
   myBodyId.ontouchmove = function(event){
+   
+   if (event.touches == 2){     // check if only two fingers on the device
     
     myFinger0 = event.touches[0]
     myFinger1 = event.touches[1]
@@ -46,11 +48,9 @@ document.getElementById('myDiv1').style.WebkitTransformOrigin = '0px 0px';
           document.myScale = 0.05
       } 
       document.getElementById('myDiv1').style.webkitTransform = 'scale('+document.myScale+')';
-     
     }  
     
     
-     
     if (document.myOnlyZoomLarger == 'true'){
       if (document.myScale < 1){    //  resets webpage to original size
           document.myScale = 1.0
@@ -61,15 +61,8 @@ document.getElementById('myDiv1').style.WebkitTransformOrigin = '0px 0px';
     }
           
         
-        
-        
 
-    
-     
-    
-    
-    
-    
+   } // end touches   
     
   }  // end ontouchmove
 
