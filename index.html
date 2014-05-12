@@ -6,13 +6,12 @@
 <script type="text/javascript">
 
 
-
-
 window.onload = function(){
 
 //Global Variables
 document.myStartDist = 0
 document.myScale = 1.1
+document.myOnlyZoomLarger = 'true'
 
 document.getElementById('my1').style.WebkitTransformOrigin = '0px 0px';
 
@@ -49,15 +48,36 @@ function myAutoZoom(){
     
     
     
+    // the following is less confusing than normal javascript if statements
     
-    if (document.myScale < 1){
-        document.myScale = 1.0
+    if (document.myOnlyZoomLarger == 'false'){
+      if (document.myScale < 0.01){    // so web page does not fully disapear
+        document.myScale = 0.01
         myResetZoom()
-    } else {
+      } else {
         myAutoZoom()
+      }
     }
     
-  }
+    
+     
+    if (document.myOnlyZoomLarger == 'true'){
+      if (document.myScale < 1){    //  resets webpage to original size
+        document.myScale = 1.0
+        myResetZoom()
+      } else {
+        myAutoZoom()
+     }
+    }  
+    
+    
+     
+    
+    
+    
+    
+    
+  }  // end ontouchmove
 
 
 
@@ -81,8 +101,8 @@ test if the width is really long before it wraps, unfortunately this is going to
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
 
 
-<input type=button value="resize" style="font-size:30px" onclick="{
-    document.all.my1.style.width = document.myScale*parseInt(document.all.my1.style.width)
+<input type=button value="Zoom and Shrink" style="font-size:30px" onclick="{
+   document.myOnlyZoomLarger = 'false'
 }"><br><br>
 
 
