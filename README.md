@@ -1,6 +1,34 @@
 j-zoom-scale-pgb-helloworld
 ======
 
+
+
+May 11, 2014
+
+It really really really bugs me that I can't get a simple viewport working in Phonegap Build for Android when it works by default on the iPad.  So.... I made a hacked version of pich zoom for the Android Phonegapp Build. It uses touchStart, touches array, clientX to get the difference in the distances between 2 finders touching the screen. It then uses webkittransform zoom and translate to scale the entire page.
+
+
+
+Bit of a hack but does work in Phonegap Build without the 3.4 Mg Hammer.js 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Bad News:
 
 Sorry to say but presently Jan 16, 2014 I can not get Phonegap Build to zoom on my Android Galaxy S3, even though it looks like it should be easy by just changing the meta tag to user-scalable=yes and setting a maximum-scale=5
