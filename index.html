@@ -18,6 +18,18 @@ document.myIntercept = -150
 
 
 
+function myResetZoom(){
+     document.getElementById('my1').style.webkitTransform = 'scale(1.0)';
+     document.getElementById('my2').style.webkitTransform = 'translate(0px,0px)';
+}
+
+function myAutoZoom(){
+     document.getElementById('my1').style.webkitTransform = 'scale('+document.myScale+')';
+     myAuto = document.mySlope*document.all.myScale.value + document.myIntercept
+     document.getElementById('my2').style.webkitTransform = 'translate('+myAuto+'px,'+myAuto+'px)';
+}
+
+
 
 // basic touch events
 
@@ -38,9 +50,9 @@ document.myIntercept = -150
     document.myScale = myChangeX
     if (document.myScale < 1){
         document.myScale = 1.0
-        document.all.myRedo.click()
+        myResetZoom()
     } else {
-        document.all.myAuto1.click()
+        myAutoZoom()
     }
     
   }
