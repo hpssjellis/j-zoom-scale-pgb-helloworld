@@ -86,7 +86,7 @@ test if the width is really long before it wraps, unfortunately this is going to
 
 
 <input type=button value="resize" style="font-size:30px" onclick="{
-    document.all.my1.style.width = '1000px'
+    document.all.my1.style.width = document.myScale*parseInt(document.all.my1.style.width)
 }"><br><br>
 
 
