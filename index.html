@@ -13,15 +13,19 @@ window.onload = function(){
 //Global Variables
 document.myStartDist = 0
 document.myScale = 1.1
+document.getElementById('my1').style.WebkitTransformOrigin = '0px 0px';
+     
+     
+     
 
 
 function myResetZoom(){
-     document.getElementById('my1').style.webkitTransform = 'scale(1.0) translate(0px,0px)';
+     document.getElementById('my1').style.webkitTransform = 'scale(1.0)';
     // document.getElementById('my1').style.webkitTransform = 'translate(0px,0px)';
 }
 
 function myAutoZoom(){
-     document.getElementById('my1').style.WebkitTransformOrigin = '0px 0px';
+
      document.getElementById('my1').style.webkitTransform = 'scale('+document.myScale+')';
 }
 
@@ -42,12 +46,20 @@ function myAutoZoom(){
     myNewWidth = parseInt(myFinger0.clientX) - parseInt(myFinger1.clientX)   
     myChangeX =  myNewWidth / document.myStartDist  
     document.myScale = myChangeX
+    
+    myAutoZoom()    // try this out
+    
+    
+    
     if (document.myScale < 1){
         document.myScale = 1.0
         myResetZoom()
     } else {
         myAutoZoom()
     }
+    
+    
+    
     
   }
 
