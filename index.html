@@ -11,7 +11,7 @@ window.onload = function(){
 //Global Variables
 document.myStartDist = 0
 document.myScale = 1.1
-document.myOnlyZoomLarger = 'true'
+document.myOnlyZoomLarger = 'true'    // if true page only can zoom larger, false allows page to shrink 
 
 document.getElementById('my1').style.WebkitTransformOrigin = '0px 0px';
 
@@ -51,8 +51,8 @@ function myAutoZoom(){
     // the following is less confusing than normal javascript if statements
     
     if (document.myOnlyZoomLarger == 'false'){
-      if (document.myScale < 0.01){    // so web page does not fully disapear
-        document.myScale = 0.01
+      if (document.myScale < 0.1){    // so web page does not fully disapear
+        document.myScale = 0.1
         myResetZoom()
       } else {
         myAutoZoom()
@@ -101,8 +101,16 @@ test if the width is really long before it wraps, unfortunately this is going to
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
 
 
-<input type=button value="Zoom and Shrink" style="font-size:30px" onclick="{
+<input type=button id="myZoomButton" value="Zoom and Shrink" style="font-size:30px" onclick="{
+if (document.myOnlyZoomLarger == 'true){
    document.myOnlyZoomLarger = 'false'
+   document.all.myZoomButton.value = 'Zoom Only'
+   } else {
+      document.myOnlyZoomLarger = 'true'
+      document.all.myZoomButton.value = 'Zoom and Shrink'   
+   }
+   
+   
 }"><br><br>
 
 
