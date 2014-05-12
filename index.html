@@ -12,28 +12,17 @@ window.onload = function(){
 
 //Global Variables
 document.myStartDist = 0
-document.myScale = 1.4
-document.mySlope = 150
-document.myIntercept = 150
-
+document.myScale = 1.1
 
 
 function myResetZoom(){
      document.getElementById('my1').style.webkitTransform = 'scale(1.0)';
-     document.getElementById('my2').style.webkitTransform = 'translate(0px,0px)';
+    // document.getElementById('my1').style.webkitTransform = 'translate(0px,0px)';
 }
 
 function myAutoZoom(){
-//WebkitTransformOrigin
-
-//style.webkitTransformOrigin = '200px 200px';
      document.getElementById('my1').style.WebkitTransformOrigin = '0px 0px';
-
      document.getElementById('my1').style.webkitTransform = 'scale('+document.myScale+')';
-   //  myAuto = document.mySlope*document.all.myScale.value - document.myIntercept
-   //  document.getElementById('my2').style.webkitTransform = 'translate('+myAuto+'px,'+myAuto+'px)';
-
-
 }
 
 
@@ -52,7 +41,6 @@ function myAutoZoom(){
     myFinger1 = event.touches[1]
     myNewWidth = parseInt(myFinger0.clientX) - parseInt(myFinger1.clientX)   
     myChangeX =  myNewWidth / document.myStartDist  
-   // myOutput.innerHTML += "x-distance = "+myChangeX+ ", "
     document.myScale = myChangeX
     if (document.myScale < 1){
         document.myScale = 1.0
@@ -78,22 +66,7 @@ function myAutoZoom(){
 
 <body id="myBodyId" >
 <div id="my1" >
-<div id="my2">
 
-test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
-test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
-test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
-
-
-<input type=button value="resize" style="font-size:30px" onclick="{
-    document.all.my1.style.width = document.myScale*parseInt(document.all.my1.style.width)
-}"><br><br>
-
-
-test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
-test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
-test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
-test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
@@ -137,15 +110,6 @@ An online image
 
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
-test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
-test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
-test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
-test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
-test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
-test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
-test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
-test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
-
 
 
 
@@ -154,7 +118,7 @@ test if the width is really long before it wraps, unfortunately this is going to
 <br>
 
 
-</div>
+
 </div>
 
 </body>    
