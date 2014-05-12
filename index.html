@@ -55,14 +55,14 @@ function myAutoZoom(){
                document.myScale = 1.0
                document.getElementById('my1').style.webkitTransform = 'scale(1.0)';
            }  
+           myAutoZoom()
            
        } else {
-          if (document.myScale < 0.02){  // smallest possible zoom so page does not disappear
-              document.myScale = 0.02
-              myAutoZoom()
-    
-      }
-    }
+             if (document.myScale < 0.02){  // smallest possible zoom so page does not disappear
+                 document.myScale = 0.02
+             }
+             myAutoZoom()
+          } //end onlyZoomLarger else statement
     
   }   // end 2 fingers
 
