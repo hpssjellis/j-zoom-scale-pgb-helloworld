@@ -77,7 +77,7 @@ function myAutoZoom(){
 </head>
 
 <body id="myBodyId" >
-<div id="my1" style="width:1000px">
+<div id="my1" style="width:400px">
 <div id="my2">
 
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
@@ -112,6 +112,11 @@ A button as a link
 
 
 <input type=button value="Google" style="font-size:30px" onclick="location='http://www.google.ca'"><br><br>
+
+
+<input type=button value="resize" style="font-size:30px" onclick="{
+    document.all.my1.width = '1000px'
+}"><br><br>
 
 
 
