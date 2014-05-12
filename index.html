@@ -46,8 +46,8 @@ function myAutoZoom(){
     myNewWidth = parseInt(myFinger0.clientX) - parseInt(myFinger1.clientX)   
     myChangeX =  myNewWidth / document.myStartDist  
     document.myScale = myChangeX
-    
-    myAutoZoom()    // try this out
+    if (event.touches.length == 2)
+       myAutoZoom()    // try this out
     
     
     
@@ -59,7 +59,7 @@ function myAutoZoom(){
   //  }
     
     
-    
+  }
     
   }
 
