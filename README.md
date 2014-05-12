@@ -51,6 +51,20 @@ I did find one gotcha. You can set the initial-scale and minimum scale to a valu
 
 Generally I would not set the initial-scale less than one so this should not be an issue.
 
+On regular installed phonegap it is reasonably easy to edit the myAppName.java file to include the following:
+
+
+        super.loadUrl(Config.getStartUrl());
+        //super.loadUrl("file:///android_asset/www/index.html")
+
+
+
+        super.appView.getSettings().setBuiltInZoomControls(true);
+        super.appView.getSettings().setDefaultZoom(ZoomDensity.MEDIUM);
+        super.appView.getSettings().setSupportZoom(true);
+
+
+
 
 
 
