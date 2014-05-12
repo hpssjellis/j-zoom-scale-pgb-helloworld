@@ -10,17 +10,22 @@
 
 window.onload = function(){
 
+//Global Variables
+document.myStartDist = 0
+document.myScale = 0
+document.mySlope = 0
+document.myIntercept = 0
+
+
 
 
 // basic touch events
 
 
  myBodyId.ontouchstart = function(event){
-   // myOutput.innerHTML = "touchstart, "+event.touches.length+', '
     myFinger0 = event.touches[0]
     myFinger1 = event.touches[1]
-    document.myStartDist = parseInt(myFinger0.clientX)  - parseInt(myFinger1.clientX)    // global variable
-   // myOutput.innerHTML +=  +document.myStartDist+ ", "   //clears the old ones
+    document.myStartDist = parseInt(myFinger0.clientX)  - parseInt(myFinger1.clientX)    
  }
 
   myBodyId.ontouchmove = function(event){
@@ -30,7 +35,7 @@ window.onload = function(){
     myNewWidth = parseInt(myFinger0.clientX) - parseInt(myFinger1.clientX)   
     myChangeX =  myNewWidth / document.myStartDist  
    // myOutput.innerHTML += "x-distance = "+myChangeX+ ", "
-    document.all.myScale.value = myChangeX
+    document.myScale = myChangeX
     if (document.all.myScale.value < 1){
         document.all.myScale.value = 1.0
         document.all.myRedo.click()
@@ -58,10 +63,9 @@ window.onload = function(){
 <div id="my2">
 
 
-<input type=hidden value="1.0" id="myScale">
 
 <input type=hidden value="auto on scale" id="myAuto1" onclick="{
-     document.getElementById('my1').style.webkitTransform = 'scale('+document.all.myScale.value+')';
+     document.getElementById('my1').style.webkitTransform = 'scale('+document.myScale+')';
      myAuto = 150*document.all.myScale.value - 150
      document.getElementById('my2').style.webkitTransform = 'translate('+myAuto+'px,'+myAuto+'px)';
      
