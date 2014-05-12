@@ -14,7 +14,7 @@ window.onload = function(){
 document.myStartDist = 0
 document.myScale = 1.4
 document.mySlope = 150
-document.myIntercept = -150
+document.myIntercept = 150
 
 
 
@@ -26,12 +26,12 @@ function myResetZoom(){
 function myAutoZoom(){
 //WebkitTransformOrigin
 
-
-    // document.getElementById('my1').style.WebkitTransformOrigin = '0px,0px';
+//style.webkitTransformOrigin = '200px 200px';
+    // document.getElementById('my1').style.WebkitTransformOrigin = '0px 0px';
 
      document.getElementById('my1').style.webkitTransform = 'scale('+document.myScale+')';
 }
-     myAuto = document.mySlope*document.all.myScale.value + document.myIntercept
+     myAuto = document.mySlope*document.all.myScale.value - document.myIntercept
      document.getElementById('my2').style.webkitTransform = 'translate('+myAuto+'px,'+myAuto+'px)';
 
 
