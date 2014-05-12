@@ -29,12 +29,12 @@ function myAutoZoom(){
 
      document.getElementById('my1').style.WebkitTransformOrigin = '0px,0px';
 
+     document.getElementById('my1').style.webkitTransform = 'scale('+document.myScale+')';
+}
      myAuto = document.mySlope*document.all.myScale.value + document.myIntercept
      document.getElementById('my2').style.webkitTransform = 'translate('+myAuto+'px,'+myAuto+'px)';
 
 
-     document.getElementById('my1').style.webkitTransform = 'scale('+document.myScale+')';
-}
 
 
 
@@ -114,12 +114,6 @@ A button as a link
 
 <input type=button value="Google" style="font-size:30px" onclick="location='http://www.google.ca'"><br><br>
 
-
-
-A button as a link to an internal app or webpage. Note you must have a file called mypage.html in the same folder
-
-
-<input type=button value="mypage.html" style="font-size:30px" onclick="location='mypage.html'"><br><br>
 
 
 
