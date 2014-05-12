@@ -49,13 +49,21 @@ function myAutoZoom(){
     myChangeX =  myNewWidth / document.myStartDist  
     document.myScale = myChangeX
     if (event.touches.length == 2){    // only 2 fingers on screen not three or more
+    
        if (document.onlyZoomLarger == true){
+    
+    
+          myAutoZoom()
+    
+       } 
+    
+    
+    /*
     
            if (document.myScale < 1){
                document.myScale = 1.0
                document.getElementById('my1').style.webkitTransform = 'scale(1.0)';
-           }  
-           myAutoZoom()
+           }  else { myAutoZoom()}
            
        } else {
              if (document.myScale < 0.02){  // smallest possible zoom so page does not disappear
@@ -63,6 +71,13 @@ function myAutoZoom(){
              }
              myAutoZoom()
           } //end onlyZoomLarger else statement
+          
+          
+      */    
+          
+          
+          
+       
     
   }   // end 2 fingers
 
@@ -108,6 +123,9 @@ A button as a link
 
 
 
+<input type=button value="Zoom Only" style="font-size:30px" onclick="document.onlyZoomLarger = true"><br><br>
+
+<input type=button value="Zoom and Shrink" style="font-size:30px" onclick="document.onlyZoomLarger = false"><br><br>
 
 
 
