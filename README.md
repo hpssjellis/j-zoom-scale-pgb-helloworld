@@ -5,7 +5,18 @@ j-zoom-scale-pgb-helloworld
 
 May 11, 2014
 
-It really really really bugs me that I can't get a simple viewport working in Phonegap Build for Android when it works by default on the iPad.  So.... I made a hacked version of pich zoom for Android Phonegap Build. It uses touchStart, touches array, clientX to get the difference in the distances between 2 fingers touching the screen. It then uses webkittransform  to scale the entire page.
+It really really really bugs me that I can't get a simple viewport working in Phonegap Build for Android when it works by default on the iPad.  So.... I made a hacked version of pinch zoom for Android Phonegap Build. It uses touchStart, touches array, clientX to get the difference in the distances between 2 fingers touching the screen. It then uses webkittransform  to scale the entire page.
+
+
+I had huge issues with scale and translate until I used this javascript command
+
+document.getElementById('myDiv1').style.WebkitTransformOrigin = '0px 0px';
+
+Then everything zoomed great.
+
+I have included regular zoom which only increases the page and my own special zoom which allows you to shrink a page to see the entire web page.
+
+I tried using the body tag id for zooming, which works but when the page shrinks the body also shrinks so that you can not touch the page to zoom in. The solution was to have a div tag just below the body but filling the entire page.
 
 
 
