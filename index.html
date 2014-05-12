@@ -31,7 +31,7 @@ document.getElementById('myDiv1').style.WebkitTransformOrigin = '0px 0px';
 
   myBodyId.ontouchmove = function(event){
    
-   if (event.touches == 2){     // check if only two fingers on the device
+   if (event.touches.length == 2){     // check if only two fingers on the device
     
     myFinger0 = event.touches[0]
     myFinger1 = event.touches[1]
