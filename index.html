@@ -16,15 +16,6 @@ document.myOnlyZoomLarger = 'true'    // if true page only can zoom larger, fals
 document.getElementById('my1').style.WebkitTransformOrigin = '0px 0px';
 
 
-function myResetZoom(){
-     document.getElementById('my1').style.webkitTransform = 'scale(1.0)';
-}
-
-function myAutoZoom(){
-
-     document.getElementById('my1').style.webkitTransform = 'scale('+document.myScale+')';
-
-}
 
 
 // basic touch events
@@ -51,10 +42,10 @@ function myAutoZoom(){
     // the following is less confusing than normal javascript if statements
     
     if (document.myOnlyZoomLarger == 'false'){
-      if (document.myScale < 0.1){    // so web page does not fully disapear
-          document.myScale = 0.1
+      if (document.myScale < 0.05){    // so web page does not fully disapear
+          document.myScale = 0.05
       } 
-      myAutoZoom()
+      document.getElementById('my1').style.webkitTransform = 'scale('+document.myScale+')';
      
     }  
     
@@ -63,9 +54,9 @@ function myAutoZoom(){
     if (document.myOnlyZoomLarger == 'true'){
       if (document.myScale < 1){    //  resets webpage to original size
           document.myScale = 1.0
-          myResetZoom()
+          document.getElementById('my1').style.webkitTransform = 'scale(1.0)';
       } else {
-        myAutoZoom()
+        document.getElementById('my1').style.webkitTransform = 'scale('+document.myScale+')';
       }
     }
           
