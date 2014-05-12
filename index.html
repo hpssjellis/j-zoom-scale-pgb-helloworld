@@ -13,7 +13,7 @@ document.myStartDist = 0
 document.myScale = 1.1
 document.myOnlyZoomLarger = 'true'    // if true page only can zoom larger, false allows page to shrink 
 
-document.getElementById('myBodyId').style.WebkitTransformOrigin = '0px 0px';
+document.getElementById('myDiv1').style.WebkitTransformOrigin = '0px 0px';
 
 
 
@@ -45,7 +45,7 @@ document.getElementById('myBodyId').style.WebkitTransformOrigin = '0px 0px';
       if (document.myScale < 0.05){    // so web page does not fully disapear
           document.myScale = 0.05
       } 
-      document.getElementById('myBodyId').style.webkitTransform = 'scale('+document.myScale+')';
+      document.getElementById('myDiv1').style.webkitTransform = 'scale('+document.myScale+')';
      
     }  
     
@@ -54,9 +54,9 @@ document.getElementById('myBodyId').style.WebkitTransformOrigin = '0px 0px';
     if (document.myOnlyZoomLarger == 'true'){
       if (document.myScale < 1){    //  resets webpage to original size
           document.myScale = 1.0
-          document.getElementById('myBodyId').style.webkitTransform = 'scale(1.0)';
+          document.getElementById('myDiv1').style.webkitTransform = 'scale(1.0)';
       } else {
-        document.getElementById('myBodyId').style.webkitTransform = 'scale('+document.myScale+')';
+        document.getElementById('myDiv1').style.webkitTransform = 'scale('+document.myScale+')';
       }
     }
           
@@ -87,6 +87,7 @@ document.getElementById('myBodyId').style.WebkitTransformOrigin = '0px 0px';
 </head>
 
 <body id="myBodyId" >
+<div id="myDiv1">
 
 
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
@@ -155,6 +156,6 @@ test if the width is really long before it wraps, unfortunately this is going to
 
 
 
-
+</div>
 </body>    
 </html>
