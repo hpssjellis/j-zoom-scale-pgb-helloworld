@@ -32,13 +32,15 @@ I tried using the body tag id for zooming, which works but when the page shrinks
 
 
 
-
+----------------------------------------------------
 
 
 
 
 
 Old Readme file when I did not have it working
+Jan 16, 2014
+
 Bad News:
 
 Sorry to say but presently Jan 16, 2014 I can not get Phonegap Build to zoom on my Android Galaxy S3, even though it looks like it should be easy by just changing the meta tag to user-scalable=yes and setting a maximum-scale=5
