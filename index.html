@@ -46,7 +46,7 @@ function myAutoZoom(){
     myNewWidth = parseInt(myFinger0.clientX) - parseInt(myFinger1.clientX)   
     myChangeX =  myNewWidth / document.myStartDist  
     document.myScale = myChangeX
-    if (event.touches.length == 2)
+    if (event.touches.length == 2){    // only 2 fingers on screen
        myAutoZoom()    // try this out
     
     
@@ -59,19 +59,17 @@ function myAutoZoom(){
   //  }
     
     
-  }
+    }
     
   }
 
 
 
+}  // end window.load
 
-
-
-
-
-
-}
+     
+     
+     
 </script>
 
 </head>
