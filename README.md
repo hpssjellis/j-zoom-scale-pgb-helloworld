@@ -21,8 +21,8 @@ I tried using the body tag id for zooming, which works but when the page shrinks
 
 
 
-To DO list: Now make this turn itself off when compiling for iOS. I think it can be conditionally compiled using device == android but will have to look into it.
-
+To DO list: Now make this turn itself off when compiling for iOS. I think it can be conditionally compiled using device == android but will have to look into it. Will use a statement kind of like  (but will have to make a donfig.xml file to use the device)
+  var document.myPath = (device.platform == "Android") ? "/android_asset/www/" : "/";
 
 
 
