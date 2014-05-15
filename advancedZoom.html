@@ -10,7 +10,7 @@
 
 
 
-function myFun(){
+function myFun(myDivToUse){
 
 
 //Global Variables
@@ -84,9 +84,10 @@ document.getElementById('myDiv1').style.WebkitTransformOrigin = '0px 0px';
 
 </head>
 
-<body id="myBodyId" onload="myFun()" >
+<body id="myBodyId" onload="myFun('myDiv1')" >
 <div id="myDiv1">
 
+new 3
 
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
