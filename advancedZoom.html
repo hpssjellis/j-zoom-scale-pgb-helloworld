@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+
+<script type="text/javascript">
+
+
+window.onload = function(){
+
+//Global Variables
+document.myStartDist = 0
+document.myScale = 1.1
+document.myOnlyZoomLarger = 'true'    // if true page only can zoom larger, false allows page to shrink 
+
+document.getElementById('myDiv1').style.WebkitTransformOrigin = '0px 0px';
+
+
+
+
+// basic touch events
+
+
+ myBodyId.ontouchstart = function(event){
+    myFinger0 = event.touches[0]
+    myFinger1 = event.touches[1]
+    document.myStartDist = parseInt(myFinger0.clientX)  - parseInt(myFinger1.clientX)    
+ }
+
+
+
+  myBodyId.ontouchmove = function(event){
+   
+   if (event.touches.length == 2){     // check if only two fingers on the device
+    
+    myFinger0 = event.touches[0]
+    myFinger1 = event.touches[1]
+    myNewWidth = parseInt(myFinger0.clientX) - parseInt(myFinger1.clientX)   
+    myChangeX =  myNewWidth / document.myStartDist  
+    document.myScale = myChangeX
+    
+    
+    
+    // the following is less confusing than normal javascript if statements
+    
+    if (document.myOnlyZoomLarger == 'false'){
+      if (document.myScale < 0.05){    // so web page does not fully disapear
+          document.myScale = 0.05
+      } 
+      document.getElementById('myDiv1').style.webkitTransform = 'scale('+document.myScale+')';
+    }  
+    
+    
+    if (document.myOnlyZoomLarger == 'true'){
+      if (document.myScale < 1){    //  resets webpage to original size
+          document.myScale = 1.0
+          document.getElementById('myDiv1').style.webkitTransform = 'scale(1.0)';
+      } else {
+        document.getElementById('myDiv1').style.webkitTransform = 'scale('+document.myScale+')';
+      }
+    }
+          
+        
+
+   } // end touches   
+    
+  }  // end ontouchmove
+
+
+
+
+
+
+
+
+
+}
+</script>
+
+</head>
+
+<body id="myBodyId" >
+<div id="myDiv1">
+
+
+test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
+test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
+test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
+
+
+<input type=button id="myZoomButton" value="Presently Zoom Larger Only" style="font-size:30px" onclick="{
+if (document.myOnlyZoomLarger == 'true'){
+   document.myOnlyZoomLarger = 'false'
+   document.all.myZoomButton.value = 'Presently Zoom and Shrink'
+   } else {
+      document.myOnlyZoomLarger = 'true'
+      document.all.myZoomButton.value = 'Presently Zoom Larger Only'   
+   }
+   
+   
+}"><br><br>
+
+
+test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
+
+
+
+<h1></h1>j30-zoom-scale-pgb-helloworld </h1><br><br>
+
+
+
+A normal link. Note: Apple does not like these use the button below.
+
+<a href="http://www.google.ca">google</a><br><br>
+
+
+
+
+
+
+A button as a link
+
+
+<input type=button value="Google" style="font-size:30px" onclick="location='http://www.google.ca'"><br><br>
+
+<input type=button value="Advanced Zoom Page" style="font-size:30px" onclick="location='advancedZoom.html'"><br><br>
+
+
+
+
+
+An online image 
+
+<img width="400" src="http://rocksetta.com/samsungs3/QrflashOnAndroid.jpg"><br><br>
+
+
+
+
+
+
+
+test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
+test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
+test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
+
+
+
+
+<br>
+
+
+
+</div>
+</body>    
+</html>
