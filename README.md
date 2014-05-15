@@ -2,7 +2,11 @@ j-zoom-scale-pgb-helloworld
 ======
 
 
-May 15, 2014 Today I am going to try to make the Android zoom ability a bit more useful by making it into a .js file that can be sued by any page in your project.
+May 15, 2014 Today I am going to try to make the Android zoom ability a bit more useful by making it into a .js file that can be used by any page in your project.
+
+this is not yet successful, just ignore advanceZoom.html and androidzoom.js for now
+
+
 
 
 
