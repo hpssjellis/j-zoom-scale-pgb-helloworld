@@ -1,4 +1,4 @@
-<script>
+
 
 // This .js file should be included on each page. and called on mouseover for specific DIV's 
 // or onload for the entire page
@@ -82,4 +82,4 @@ document.getElementById(myDivFromPage).style.WebkitTransformOrigin = '0px 0px';
 }
 
 
-</script>
+
