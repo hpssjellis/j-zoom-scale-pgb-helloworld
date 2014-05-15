@@ -1,6 +1,6 @@
 
 
-// This .js file should be included on each page. and called on mouseover for specific DIV's 
+// This .js file should be included on each page, and called on mouseover for specific DIV's 
 // or onload for the entire page
 // <script  src=androidzoom.js>
 // <div id="mySpecialDiv" onmouseover="myAndroidZoom('mySpecialDiv', 'true')"> 
@@ -8,6 +8,7 @@
 
 
 
+//window.onload = function(){
 
 
 
