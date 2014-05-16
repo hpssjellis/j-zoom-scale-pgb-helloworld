@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+
+<script type="text/javascript">
+
+
+//window.onload = function(){
+
+
+
+function myAndroidZoom(myDivToUse,myTypeOfZoom){
+
+
+//Global Variables
+document.myStartDist = 0
+document.myScale = 1.1
+document.myOnlyZoomLarger = myTypeOfZoom
+document.getElementById(myDivToUse).style.WebkitTransformOrigin = '0px 0px';
+
+
+
+
+// basic touch events
+
+
+ document.getElementById(myDivToUse).ontouchstart = function(event){
+    myFinger0 = event.touches[0]
+    myFinger1 = event.touches[1]
+    document.myStartDist = parseInt(myFinger0.clientX)  - parseInt(myFinger1.clientX)    
+ }
+
+
+
+  document.getElementById(myDivToUse).ontouchmove = function(event){
+   
+   if (event.touches.length == 2){     // check if only two fingers on the device
+    
+    myFinger0 = event.touches[0]
+    myFinger1 = event.touches[1]
+    myNewWidth = parseInt(myFinger0.clientX) - parseInt(myFinger1.clientX)   
+    myChangeX =  myNewWidth / document.myStartDist  
+    document.myScale = myChangeX
+    
+    
+    
+    // the following is less confusing than normal javascript if statements
+    
+    if (document.myOnlyZoomLarger == 'false'){
+      if (document.myScale < 0.05){    // so web page does not fully disapear
+          document.myScale = 0.05
+      } 
+      document.getElementById(myDivToUse).style.webkitTransform = 'scale('+document.myScale+')';
+    }  
+    
+    
+    if (document.myOnlyZoomLarger == 'true'){
+      if (document.myScale < 1){    //  resets webpage to original size
+          document.myScale = 1.0
+          document.getElementById(myDivToUse).style.webkitTransform = 'scale(1.0)';
+      } else {
+        document.getElementById(myDivToUse).style.webkitTransform = 'scale('+document.myScale+')';
+      }
+    }
+          
+        
+
+   } // end touches   
+    
+  }  // end ontouchmove
+
+
+
+
+
+
+
+
+
+}
+</script>
+
+</head>
+
+<body onload="{myAndroidZoom('myDiv1','false')}" >
+
+new 4<br>
+
+test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
+test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
+test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
+
+<div id="myDiv1" onclick="{
+
+   // myAndroidZoom('myDiv1','false')
+
+}">
+
+
+
+test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
+test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
+test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
+
+
+
+
+<br>
+
+
+
+</div>
+</body>    
+</html>
