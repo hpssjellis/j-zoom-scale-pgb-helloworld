@@ -85,7 +85,7 @@ document.getElementById(document.myGlobalDiv).style.WebkitTransformOrigin = '0px
 </head>
 
 <body id="myBodyMain" onload="{
-myAndroidZoom('myBodyMain','myDiv1','true')
+myAndroidZoom('myBodyMain','myDiv1','false')
 
 }" >
 
@@ -96,7 +96,7 @@ test if the width is really long before it wraps, unfortunately this is going to
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
 
 
-<div id="myDiv1" onmousedown="{
+<div id="myDiv1" ontouchstart="{
      document.myGlobalDiv = 'myDiv1'
 }">
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
@@ -123,7 +123,7 @@ test if the width is really long before it wraps, unfortunately this is going to
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
 
 
-<div id="myDiv2" onmousedown="{
+<div id="myDiv2" ontouchstart="{
      document.myGlobalDiv = 'myDiv2'
 }">
 test 
