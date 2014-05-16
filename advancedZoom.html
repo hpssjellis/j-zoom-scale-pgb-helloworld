@@ -14,10 +14,11 @@ function myAndroidZoom(myBodyId, myDivId, myZoomOnly){
 
 
 //Global Variables
+document.myGlobalDiv = myDivId
 document.myStartDist = 0
 document.myScale = 1.1
 document.myOnlyZoomLarger = myZoomOnly
-document.getElementById(myDivId).style.WebkitTransformOrigin = '0px 0px';
+document.getElementById(document.myGlobalDiv).style.WebkitTransformOrigin = '0px 0px';
 
 
 
@@ -51,16 +52,16 @@ document.getElementById(myDivId).style.WebkitTransformOrigin = '0px 0px';
       if (document.myScale < 0.05){    // so web page does not fully disapear
           document.myScale = 0.05
       } 
-      document.getElementById(myDivId).style.webkitTransform = 'scale('+document.myScale+')';
+      document.getElementById(document.myGlobalDiv).style.webkitTransform = 'scale('+document.myScale+')';
     }  
     
     
     if (document.myOnlyZoomLarger == 'true'){
       if (document.myScale < 1){    //  resets webpage to original size
           document.myScale = 1.0
-          document.getElementById(myDivId).style.webkitTransform = 'scale(1.0)';
+          document.getElementById(document.myGlobalDiv).style.webkitTransform = 'scale(1.0)';
       } else {
-        document.getElementById(myDivId).style.webkitTransform = 'scale('+document.myScale+')';
+        document.getElementById(document.myGlobalDiv).style.webkitTransform = 'scale('+document.myScale+')';
       }
     }
           
@@ -85,7 +86,6 @@ document.getElementById(myDivId).style.WebkitTransformOrigin = '0px 0px';
 
 <body id="myBodyMain" onload="{
 myAndroidZoom('myBodyMain','myDiv1','true')
-myAndroidZoom('myBodyMain','myDiv2','false')
 
 }" >
 
@@ -96,7 +96,9 @@ test if the width is really long before it wraps, unfortunately this is going to
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
 
 
-<div id="myDiv1">
+<div id="myDiv1" onmousedown="{
+alert('dvi1')
+}">
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
@@ -121,7 +123,10 @@ test if the width is really long before it wraps, unfortunately this is going to
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
 
 
-<div id="myDiv2">
+<div id="myDiv2" onmousedown="{
+alert('dvi2')
+}">
+test 
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
