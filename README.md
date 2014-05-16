@@ -25,7 +25,7 @@ unless it is the only div taking up the entire body then it can simply be
 <div id="myDiv1" >
 
 
-
+Note: This works much better when you pinch zoom the entire page. When you have several DIV's they zoom but what does the rest of the page do. Should it take up the slack and zoom as well or should it stay put..... Not sure if I want to spend time on this issue when I don't even know the best theoretical solution. Anyway this is a start.
 
 
 
