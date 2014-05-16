@@ -2,10 +2,27 @@ j-zoom-scale-pgb-helloworld
 ======
 
 
-May 15, 2014 Today I am going to try to make the Android zoom ability a bit more useful by making it into a .js file that can be used by any page in your project.
+May 15, 2014 Today I am going to try to make the Android zoom ability a bit more useful by making it into an androidzoom.js file that can be used by any page in your project. Very lucky, got it working in one day. Iclude the script using the tag:
 
-this is not yet successful, just ignore advanceZoom.html and androidzoom.js for now
+<script type="text/javascript" src="androidzoom.js"></script>
 
+
+
+And then in your body tag call the function this way
+
+<body id="myBodyMain" onload="{myAndroidZoom('myBodyMain','myDiv1','false')}" >
+
+
+
+Make sure every div that you want to zoom includes the following:
+<div id="myDiv1" ontouchstart="{
+     document.myGlobalDiv = 'myDiv1'
+}">
+
+
+unless it is the only div taking up the entire body then it can simply be
+
+<div id="myDiv1" >
 
 
 
