@@ -26,7 +26,7 @@ document.getElementById(myDivToUse).style.WebkitTransformOrigin = '0px 0px';
 // basic touch events
 
 
- myBodyId.ontouchstart = function(event){
+ document.getElementById(myDivToUse).ontouchstart = function(event){
     myFinger0 = event.touches[0]
     myFinger1 = event.touches[1]
     document.myStartDist = parseInt(myFinger0.clientX)  - parseInt(myFinger1.clientX)    
@@ -34,7 +34,7 @@ document.getElementById(myDivToUse).style.WebkitTransformOrigin = '0px 0px';
 
 
 
-  myBodyId.ontouchmove = function(event){
+  document.getElementById(myDivToUse).ontouchmove = function(event){
    
    if (event.touches.length == 2){     // check if only two fingers on the device
     
@@ -93,8 +93,8 @@ test if the width is really long before it wraps, unfortunately this is going to
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
 
 <div id="myDiv1" onclick="{
-//alert()
-myAndroidZoom('myDiv1','false')
+
+    myAndroidZoom('myDiv1','false')
 
 }">
 
