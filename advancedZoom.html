@@ -84,8 +84,7 @@ document.getElementById(myDivToUse).style.WebkitTransformOrigin = '0px 0px';
 
 </head>
 
-<body id="myBodyId" onload="myAndroidZoom('myDiv1','false')" >
-<div id="myDiv1">
+<body id="myBodyId"  >
 
 new 4<br>
 
@@ -93,8 +92,11 @@ test if the width is really long before it wraps, unfortunately this is going to
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
 test if the width is really long before it wraps, unfortunately this is going to wreck text wrapping and will need to be made dynamic
 
+<div id="myDiv1" onEnter="{
+alert()
+//myAndroidZoom('myDiv1','false')
 
-
+}">
 
 
 
