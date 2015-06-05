@@ -4,9 +4,9 @@ j-zoom-scale-pgb-helloworld
 
 May 15, 2014 Today I am going to try to make the Android zoom ability a bit more useful by making it into an androidzoom.js file that can be used by any page in your project. Very lucky, got it working in one day. Include the script using the tag:
 
-<pre>
+<text>
 <script type="text/javascript" src="androidzoom.js"></script>
-</pre>
+</text>
 
 
 And then in your body tag call the function this way
