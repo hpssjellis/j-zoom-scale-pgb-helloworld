@@ -4,30 +4,30 @@ j-zoom-scale-pgb-helloworld
 
 May 15, 2014 Today I am going to try to make the Android zoom ability a bit more useful by making it into an androidzoom.js file that can be used by any page in your project. Very lucky, got it working in one day. Include the script using the tag:
 
-<text>
+```
 <script type="text/javascript" src="androidzoom.js"></script>
-</text>
+```
 
 
 And then in your body tag call the function this way
-<pre>
+```
 <body id="myBodyMain" onload="{myAndroidZoom('myBodyMain','myDiv1','false')}" >
-</pre>
+```
 
 
 Make sure every div that you want to zoom includes the following:
-<pre>
+```
 
 <div id="myDiv1" ontouchstart="{
      document.myGlobalDiv = 'myDiv1'
 }">
-</pre>
+```
 
 unless it is the only div taking up the entire body then it can simply be
 
-<pre>
+```
 <div id="myDiv1" >
-</pre>
+```
 
 Note: This works much better when you pinch zoom the entire page. When you have several DIV's they zoom but what does the rest of the page do. Should it take up the slack and zoom as well or should it stay put..... Not sure if I want to spend time on this issue when I don't even know the best theoretical solution. Anyway this is a start.
 
@@ -41,9 +41,9 @@ It really really really bugs me that I can't get a simple viewport working in Ph
 
 
 I had huge issues with scale and translate until I used this javascript command
-
+```
 document.getElementById('myDiv1').style.WebkitTransformOrigin = '0px 0px';
-
+```
 Then everything zoomed great.
 
 I have included regular zoom which only increases the page and my own special zoom which allows you to shrink a page to see the entire web page.
@@ -54,9 +54,11 @@ I tried using the body tag id for zooming, which works but when the page shrinks
 
 
 To DO list: Now make this turn itself off when compiling for iOS. I think it can be conditionally compiled using device == android but will have to look into it. Will use a statement kind of like  (but will have to make a donfig.xml file to use the device)
+
+```
   var document.myPath = (device.platform == "Android") ? "/android_asset/www/" : "/";
 
-
+```
 
 
 
@@ -97,7 +99,7 @@ Generally I would not set the initial-scale less than one so this should not be 
 
 On regular installed phonegap it is reasonably easy to edit the myAppName.java file to include the following:
 
-
+```
         super.loadUrl(Config.getStartUrl());
         //super.loadUrl("file:///android_asset/www/index.html")
 
@@ -107,7 +109,7 @@ On regular installed phonegap it is reasonably easy to edit the myAppName.java f
         super.appView.getSettings().setDefaultZoom(ZoomDensity.MEDIUM);
         super.appView.getSettings().setSupportZoom(true);
 
-
+```
 
 
 
