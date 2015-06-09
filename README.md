@@ -100,6 +100,16 @@ Generally I would not set the initial-scale less than one so this should not be 
 On regular installed phonegap it is reasonably easy to edit the myAppName.java file to include the following:
 
 ```
+
+import android.webkit.WebSettings; 
+import android.webkit.WebSettings.ZoomDensity;
+
+```
+
+
+
+
+```
         super.loadUrl(Config.getStartUrl());
         //super.loadUrl("file:///android_asset/www/index.html")
 
